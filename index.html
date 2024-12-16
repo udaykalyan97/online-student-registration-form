@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script src="https://kit.fontawesome.com/5cc55520bd.js" crossorigin="anonymous"></script>
+    <title>FSD Register</title>
+</head>
+<body class="flex flex-col items-center min-h-screen bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="w-full bg-blue-800 text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">FSD Course</a>
+            <ul class="flex space-x-6">
+                <li><a href="#registration-section" class="hover:text-gray-300">Register</a></li>
+                <li><a href="#profile-list" class="hover:text-gray-300">Student List</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="w-full max-w-3xl p-8 bg-gray-50 shadow-lg rounded-xl dark:bg-gray-400 mt-10">
+        <header class="text-center">
+            <p class="text-lg text-gray-600 italic">Welcome to FSD Course</p>
+            <h1 class="text-5xl font-extrabold mt-2 text-blue-800">Student Registration Form</h1>
+        </header>
+
+        <!-- Registration Section -->
+        <section id="registration-section" class="mt-10">
+            <form id="student-form" class="bg-white p-8 rounded-xl shadow-md transition-transform transform hover:scale-105 duration-300 ease-in-out">
+                <div class="mb-6">
+                    <label for="name" class="block text-gray-800 font-semibold mb-2">Student Name:</label>
+                    <input type="text" id="name" name="name" class="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300 ease-in-out" required>
+                </div>
+                <div class="mb-6">
+                    <label for="id" class="block text-gray-800 font-semibold mb-2">Student ID:</label>
+                    <input type="number" id="id" name="id" class="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300 ease-in-out" required>
+                </div>
+                <div class="mb-6">
+                    <label for="email" class="block text-gray-800 font-semibold mb-2">Student Email:</label>
+                    <input type="email" id="email" name="email" class="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300 ease-in-out" required>
+                </div>
+                <div class="mb-6">
+                    <label for="phone" class="block text-gray-800 font-semibold mb-2">Contact Number:</label>
+                    <input type="number" id="phone" name="phone" class="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300 ease-in-out" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" id="button" class="bg-blue-600 text-white py-3 px-8 rounded-xl shadow-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105">Submit</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Student List Section -->
+        <section id="profile-list" class="mt-10">
+            <div id="table-container" class="hidden">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Registered Students</h2>
+                <div class="overflow-y-auto max-h-64">
+                    <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-lg">
+                        <thead class="bg-gray-200">
+                            <tr>
+                                <th class="py-2 px-4 border-b text-left font-semibold">Name</th>
+                                <th class="py-2 px-4 border-b text-left font-semibold">ID</th>
+                                <th class="py-2 px-4 border-b text-left font-semibold">Email</th>
+                                <th class="py-2 px-4 border-b text-left font-semibold">Contact</th>
+                                <th class="py-2 px-4 border-b text-left font-semibold">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="profile-table-body">
+                            <!-- Student profiles will be added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <p id="no-students-message" class="text-gray-600 mt-4 hidden">No students registered yet.</p>
+        </section>
+    </main>
+</body>
+</html>
